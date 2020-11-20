@@ -29,9 +29,9 @@ Encerramos a configuração inicial do WinServer. Faça o login novamente e deix
 
 No WinServer:
 
-1. Vá até a Central de Redes e Compartilhamento > Gerenciar conexões de rede (na esquerda) > Duplo clique na "Conexão local"> Propriedades > Duplo clique Protocolo TCP/IP versão 4 (TCP/IPv4) > Usar o seguinte endereço IP
-   Endereço IP: 192.168.10.1
-   Máscara de sub-rede: 255.255.255.0
+1. Vá até a Central de Redes e Compartilhamento > Gerenciar conexões de rede (na esquerda) > Duplo clique na "Conexão local"> Propriedades > Duplo clique Protocolo TCP/IP versão 4 (TCP/IPv4) > Usar o seguinte endereço IP  
+   Endereço IP: 192.168.10.1  
+   Máscara de sub-rede: 255.255.255.0  
    Gateway padrão: 192.168.10.1
 
    Selecione OK > OK > Fechar > e pode fechar a janela de Conexões de Rede
@@ -46,10 +46,10 @@ No WinServer:
 
 No WinXP:
 
-1. Vá em Conexão Local, pelo ícone de internet na barra de tarefas > Propriedades > Duplo clique em Protocolo TCP/IP > Usar o seguinte endereço IP
-   Endereço IP: 192.168.10.2
-   Máscara de sub-rede: 255.255.255.0
-   Gateway padrão: 192.168.10.1
+1. Vá em Conexão Local, pelo ícone de internet na barra de tarefas > Propriedades > Duplo clique em Protocolo TCP/IP > Usar o seguinte endereço IP  
+   Endereço IP: 192.168.10.2  
+   Máscara de sub-rede: 255.255.255.0  
+   Gateway padrão: 192.168.10.1  
 
    Selecione OK > OK > Fechar
 
@@ -61,18 +61,18 @@ No WinXP:
 
 No WinServer:
 
-1. Em Tarefas de Configuração Iniciais > Seção Fornecer Informações do Computador > Fornecer nome e o domínio do computador > Alterar
-   Nome do computador: server01
-   Clique em "Mais"> Sufixo DNS primário: com
-   Grupo de trabalho (padrão): WORKGROUP
+1. Em Tarefas de Configuração Iniciais > Seção Fornecer Informações do Computador > Fornecer nome e o domínio do computador > Alterar  
+   Nome do computador: server01  
+   Clique em "Mais"> Sufixo DNS primário: com  
+   Grupo de trabalho (padrão): WORKGROUP  
 
    \> OK > vai pedir que reinicie o computador, clique OK > Fechar > Reiniciar agora
 
 No WinXP:
 
-1. Painel de Controle > Alternar para o modo de exibição clássico (esquerda) > Sistema > Nome do computador > Alterar
-   Nome do computador: *A sua escolha*
-   Grupo de trabalho _(igual ao WinServer)_: WORKGROUP
+1. Painel de Controle > Alternar para o modo de exibição clássico (esquerda) > Sistema > Nome do computador > Alterar  
+   Nome do computador: *A sua escolha*  
+   Grupo de trabalho _(igual ao WinServer)_: WORKGROUP  
 
    \> OK > vai pedir que reinicie o computador, clique OK > OK> Reiniciar agora
 
@@ -100,9 +100,9 @@ Agora vamos fazer a configuração da área de trabalho remota, de forma que sej
 
 Vamos agora para o WinXP
 
-1. Iniciar > Todos os programas > Acessórios > Conexão de área de trabalho remota > Preencha os campos:
-   Computador: 192.168.10.1
-   Nome de usuário: *insira o nome do usuário administrador configurado anteriormente*
+1. Iniciar > Todos os programas > Acessórios > Conexão de área de trabalho remota > Preencha os campos:  
+   Computador: 192.168.10.1  
+   Nome de usuário: *insira o nome do usuário administrador configurado anteriormente*  
    \> Conectar
 
 Automaticamente você é levado à tela de login do WinServer através da conexão do WinXP, pelo recurso Área de Trabalho Remota. Etapa concluída! Você agora tem acesso remoto ao servidor!
@@ -121,11 +121,10 @@ No WinServer:
 3. Clique com o botão direito em "Zonas de pesquisa inversa" > Nova zona > Avançar > Zona primária > Avançar > Zona de pesquisa inversa IPv4 > Avançar > Identificação de rede: 192.168.10 > Avançar > Criar novo arquivo com valor padrão > Avançar > Não permitir atualizações > Avançar > Concluir
 4. Expanda as zonas de pesquisa direta > clique no server01.com > botão direito na área em branco no centro > Novo Host (A ou AAAA) > Nome deixado em branco; endereço IP: 192.168.10.1 > Marcar a opção "Criar registro de ponteiro associado" > Adicionar host > OK > Concluído
 5. Botão direito na área em branco no centro novamente > Novo alias (CNAME) > Nome: www > Procurar > SERVER01 > Zonas de pesquisa direta > server01.com > (igual à pasta pai) > OK > OK
-6. Na sidebar, botão direito no SERVER01 > Iniciar nslookup > Teste os valores a seguir, um de cada vez. É esperado que ele retorne o Nome como server01.com e o Endereço como 192.168.10.1 para cada teste:
-   - 192.168.10.1
-   - www.server01.com
-   - server01.com
-
+6. Na sidebar, botão direito no SERVER01 > Iniciar nslookup > Teste os valores a seguir, um de cada vez. É esperado que ele retorne o Nome como server01.com e o Endereço como 192.168.10.1 para cada teste:  
+   - 192.168.10.1  
+   - www.server01.com  
+   - server01.com  
 
 
 ## 6 - Configurar DHCP
@@ -134,14 +133,14 @@ No WinServer:
 
 No WinServer:
 
-1. Tarefas de Configuração Iniciais > Seção Personalizar Este Servidor > Adicionar funções > Próximo > Marcar a opção "Servidor DHCP" > Próximo > Próximo > Próximo > Domínio Pai: server01.com > Próximo > WINS não é necessário > Próximo > Adicionar > Preencha os campos:
-   Nome do escopo: Geral
-   Endereço IP Inicial: 192.168.10.101
-   Endereço IP Final: 192.168.10.200
-   Máscara de sub-rede: 255.255.255.0
-   Gateway padrão: 192.168.10.1
-   Tipo de sub-rede: Com fio
-   ✔ Ativar este escopo 
+1. Tarefas de Configuração Iniciais > Seção Personalizar Este Servidor > Adicionar funções > Próximo > Marcar a opção "Servidor DHCP" > Próximo > Próximo > Próximo > Domínio Pai: server01.com > Próximo > WINS não é necessário > Próximo > Adicionar > Preencha os campos:  
+   Nome do escopo: Geral  
+   Endereço IP Inicial: 192.168.10.101  
+   Endereço IP Final: 192.168.10.200  
+   Máscara de sub-rede: 255.255.255.0  
+   Gateway padrão: 192.168.10.1  
+   Tipo de sub-rede: Com fio  
+   ✔ Ativar este escopo   
 
    \> OK > Próximo > Desabilitar o modo sem monitação > Próximo > Instalar (é comum levar um tempinho!) > Fechar
 
@@ -184,14 +183,14 @@ No WinServer:
 
    \> Salve o arquivo e feche o bloco de notas > no Windows Explorer da pasta > Ferramentas > Opções de pasta > Modo de exibição > Desmarque "Ocultar as extensões dos tipos de arquivo conhecidos" > OK > Renomeie o arquivo index.html e remova a extensão .txt > Sim
 
-3. Iniciar > Ferramentas Administrativas > Gerenciador do Serviços de Informações da Internet (IIS) > na sidebar, expandir SERVER01 > botão direito em Sites > Adicionar Site > Preencha:
-   Nome do site: meusite.com
-   Caminho físico: clique nos "...", navegue para C:/inetpub/wwwroot/meusite.com, selecione-o e aperte OK
-   Tipo: http
-   Endereço IP: 192.168.10.1
-   Porta: 80
-   Nome do host: www.meusite.com
-   ✔ Iniciar site imediatamente
+3. Iniciar > Ferramentas Administrativas > Gerenciador do Serviços de Informações da Internet (IIS) > na sidebar, expandir SERVER01 > botão direito em Sites > Adicionar Site > Preencha:  
+   Nome do site: meusite.com  
+   Caminho físico: clique nos "...", navegue para C:/inetpub/wwwroot/meusite.com, selecione-o e aperte OK  
+   Tipo: http  
+   Endereço IP: 192.168.10.1  
+   Porta: 80  
+   Nome do host: www.meusite.com  
+   ✔ Iniciar site imediatamente  
 
    \> OK > Selecione o site > clique em Iniciar na sidebar direita
 
